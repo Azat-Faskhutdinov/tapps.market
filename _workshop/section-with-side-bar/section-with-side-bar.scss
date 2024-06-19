@@ -1,0 +1,21 @@
+.main-with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1em;
+    max-width: 1200px;
+    margin-inline: auto;
+
+    &__content {
+        flex-basis: 500px; // min-width
+        flex-grow: 9999;
+      }
+    
+      &__aside {
+        flex-basis: 300px; // min-width, after reaching min-width, it will grow to full width
+        flex-grow: 1;
+      }
+  }
+  
+  
+  

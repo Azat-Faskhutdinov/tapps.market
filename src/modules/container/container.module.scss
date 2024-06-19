@@ -1,0 +1,15 @@
+@use '@/styles/vars/media';
+
+:root {
+  --container-width: 1600px;
+  --container-gap: 30px;
+
+  @media (width < media.$media-1920) {
+    --container-width: 1170px;
+  }
+}
+
+.container {
+  margin-inline: auto;
+  width: min(100% - var(--container-gap) var(--container-gap), var(--container-width));
+}

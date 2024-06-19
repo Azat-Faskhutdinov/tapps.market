@@ -1,0 +1,45 @@
+.loader {
+    --width: 100px;
+    --inner-circle: 80px; // border-radius will be 20px
+    --main-color: violet;
+    --disappear-color: white;
+
+    background: conic-gradient(var(--disappear-color), var(--main-color));
+    position: relative;
+    border-radius: 50%;
+    width: var(--width);
+    height: var(--width);
+    animation: loader-rotation 200ms linear infinite;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: calc(var(--width) - var(--inner-circle));
+        left: calc(var(--width) - var(--inner-circle));
+        width: var(--inner-circle);
+        height: var(--inner-circle);
+        border-radius: 50%;
+        background-color: var(--disappear-color);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        background-color: var(--main-color);
+        right: 50%;
+        transform: translateX(-50%);
+        width: calc((var(--width) - var(--inner-circle)) / 2);
+        height: calc((var(--width) - var(--inner-circle)) / 2);
+    }
+}
+
+@keyframes loader-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

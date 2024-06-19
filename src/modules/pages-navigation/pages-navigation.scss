@@ -1,0 +1,130 @@
+@use '@/styles/mixins/mixins.scss';
+@use '@/styles/vars/vars.scss';
+
+.pages-navigation {
+  $self: &;
+
+  background-color: rgb(#EEF3FF, 0.25);
+  min-height: 100dvh;
+  padding-block: 60px;
+
+  @media (width < vars.$media-768) {
+    padding-block: 40px;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1600px + 30px + 30px;
+    padding-inline: 30px;
+    margin-inline: auto;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: var(--grid-gap);
+    align-items: center;
+
+    @media (width < vars.$media-768) {
+      row-gap: 36px;
+    }
+  }
+
+  &__left {
+    //@include mixins.Regular-14;
+    line-height: 130%;
+    grid-column: span 4;
+    max-width: 710px;
+    color: #757C86;
+
+    @media (width < vars.$media-768) {
+      grid-column: span 8;
+      order: 2;
+    }
+  }
+
+  &__right {
+    grid-column: span 4;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @media (width < vars.$media-768) {
+      grid-column: span 8;
+      order: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__left-title {
+    //@include mixins.Bold-36;
+
+    font-size: 48px;
+    margin-bottom: 12px;
+    color: var(--neutral);
+  }
+
+  &__nav-shell {
+    grid-column: span 4;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    order: 3;
+
+    @media (width < vars.$media-1440) {
+      grid-column: span 6;
+    }
+
+    @media (width < vars.$media-1280) {
+      grid-column: span 8;
+      margin-top: 40px;
+    }
+
+    @media (width < vars.$media-768) {
+      margin-top: 20px;
+    }
+  }
+
+  &__item {
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      #{$self}__nav {
+        color: #E97C7A;
+      }
+    }
+    &:active {
+      #{$self}__nav {
+        color: var(--red);
+      }
+    }
+  }
+
+  &__placeholder {
+    //@include mixins.Bold-20;
+    grid-column: span 2;
+    color: var(--black);
+
+    @media (width < vars.$media-768) {
+      grid-column: span 4;
+    }
+  }
+
+  &__nav {
+    //@include mixins.Regular-14;
+    color: var(--gray);
+    grid-column: span 2;
+
+    transition: vars.$duration color vars.$timing;
+
+    @media (width < vars.$media-768) {
+      grid-column: span 4;
+    }
+  }
+}
