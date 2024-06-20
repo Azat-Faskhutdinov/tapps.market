@@ -57,6 +57,9 @@
     "gulp-replace": "^1.1.4",
     "imask": "^6.6.0",
     "lodash": "^4.17.21",
-    "mkdirp": "^3.0.1"
+    "mkdirp": "^3.0.1",
+    "swiper": "8.4.5",
+    "simplebar": "^6.2.5",
+    "yup": "^1.4.0"
   }
 }

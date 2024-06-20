@@ -1,7 +1,7 @@
 @use '@/styles/vars/media.scss';
 
 * {
-  //outline: 1px solid green;
+  // outline: 1px solid green;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -9,6 +9,10 @@ html:not(.transition) {
   * {
     transition-duration: 0ms !important;
   }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
 }
 
 html {

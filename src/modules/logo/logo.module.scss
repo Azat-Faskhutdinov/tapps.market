@@ -1,0 +1,25 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
+.logo {
+  cursor: pointer;
+
+  @media (width < vars.$media-768) {
+    width: 110px;
+    height: 19px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      img {
+        scale: 1.05;
+      }
+    }
+  }
+
+  img {
+    width: 165px;
+    height: 29px;
+    transition: vars.$duration scale vars.$timing;
+  }
+}

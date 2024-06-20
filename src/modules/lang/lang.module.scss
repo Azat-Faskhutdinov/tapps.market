@@ -1,0 +1,106 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
+.lang {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  border-bottom: unset;
+  position: relative;
+
+  transition: vars.$duration background-color vars.$timing, vars.$duration border-color vars.$timing;
+
+  &__panel {
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid var(--blue);
+    color: var(--blue);
+    height: 49px;
+    width: 52px;
+    cursor: pointer;
+
+    transition: vars.$duration background-color vars.$timing,
+      vars.$duration border-color vars.$timing, vars.$duration color vars.$timing;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #2990ff;
+        color: var(--white);
+      }
+    }
+  }
+
+  &__item {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    border-radius: 15px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+
+    transition: vars.$duration color vars.$timing, vars.$duration background-color vars.$timing,
+      vars.$duration border-color vars.$timing;
+
+    &:hover,
+    &--active {
+      border-color: #007aff;
+      background-color: var(--blue);
+      color: var(--white);
+    }
+  }
+
+  &__body {
+    transform-origin: top right;
+    scale: 0.8;
+    translate: 0 -20px;
+    opacity: 0;
+
+    width: 260px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: var(--white);
+
+    position: absolute;
+    top: calc(100% + 20px);
+    right: 0;
+
+    transition: vars.$duration scale ease, vars.$duration opacity ease,
+      vars.$duration translate ease;
+  }
+
+  &__close {
+    margin-inline: auto;
+    color: #007aff;
+    cursor: pointer;
+    transition: vars.$duration color vars.$timing;
+
+    @media (hover: hover) {
+      &:hover {
+        color: #63abf8;
+      }
+    }
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &--opened {
+    .lang__panel {
+      background-color: #2990ff;
+      color: var(--white);
+    }
+
+    .lang__body {
+      scale: 1;
+      translate: 0;
+      opacity: 1;
+    }
+  }
+}

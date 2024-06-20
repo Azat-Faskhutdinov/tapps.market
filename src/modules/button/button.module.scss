@@ -1,0 +1,45 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
+.button {
+  border: 1.5px solid transparent;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.01em;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: 49px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  transition: vars.$duration background-color vars.$timing, vars.$duration color vars.$timing,
+    vars.$duration border-color vars.$timing;
+
+  &--ghost {
+    border: 1.5px solid var(--blue);
+    color: var(--blue);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #2990ff;
+        color: var(--white);
+      }
+    }
+  }
+
+  &--primary {
+    background-color: var(--blue);
+    color: var(--white);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #2990ff;
+      }
+    }
+  }
+}

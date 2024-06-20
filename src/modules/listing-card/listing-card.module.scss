@@ -1,0 +1,121 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
+.listing-card {
+  border: 1px solid #ececec;
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+  transition: vars.$duration border-color vars.$timing;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--blue);
+    }
+  }
+
+  &__img-wrap {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    position: relative;
+
+    &::before {
+      content: attr(data-count);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border: 1.5px solid var(--white);
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 16.94px;
+      letter-spacing: 0.01em;
+      background-color: #dbdbe0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+
+    &--golden {
+      &::before {
+        background-color: #ffe165;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    letter-spacing: 0.01em;
+    color: #252525;
+    margin-bottom: 5px;
+  }
+
+  &__desc {
+    @include mixins.crop-height(1);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.01em;
+    color: #6d727e;
+
+    @media (width < vars.$media-1024) {
+      @include mixins.crop-height-update(2);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @media (width < vars.$media-1024) {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 6px;
+    margin: -6px;
+    cursor: pointer;
+    transition: vars.$duration opacity vars.$timing;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    svg {
+      width: 17px;
+      height: 16px;
+    }
+  }
+}

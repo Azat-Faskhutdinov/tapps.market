@@ -1,0 +1,17 @@
+@use '@/styles/vars/media.scss';
+
+.gap {
+  height: 60px;
+
+  @media (width < media.$media-768) {
+    height: 30px;
+  }
+
+  &--scroll {
+    height: 60px - 15px;
+
+    @media (width < media.$media-1024) {
+      height: 30px;
+    }
+  }
+}

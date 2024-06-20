@@ -5,11 +5,17 @@
   --container-gap: 30px;
 
   @media (width < media.$media-1920) {
-    --container-width: 1170px;
+    --container-width: 1200px;
+  }
+
+  @media (width < media.$media-768) {
+    --container-gap: 15px;
   }
 }
 
 .container {
+  $min-width: calc(var(--container-width) + var(--container-gap) + var(--container-gap));
+  width: min($min-width, 100%);
   margin-inline: auto;
-  width: min(100% - var(--container-gap) var(--container-gap), var(--container-width));
+  padding-inline: var(--container-gap);
 }

@@ -1,0 +1,10 @@
+@use '@/styles/vars/media.scss';
+
+@mixin swiper-margin {
+  @media (width < media.$media-768) {
+    padding-left: var(--container-gap);
+    padding-right: calc(var(--container-gap) + 15px);
+    margin-left: calc(-1 * var(--container-gap));
+    width: calc(100% + var(--container-gap) + var(--container-gap));
+  }
+}

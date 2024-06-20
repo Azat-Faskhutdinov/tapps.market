@@ -1,0 +1,33 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
+.listing {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
+
+    @media (width < vars.$media-768) {
+      align-items: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__scroll {
+    padding-bottom: 15px;
+  }
+
+  &__body {
+    padding-bottom: 15px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 13px;
+    padding-bottom: 15px;
+  }
+
+  &__card {
+    min-width: 275px;
+  }
+}

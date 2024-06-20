@@ -1,0 +1,111 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
+.navigation {
+  position: relative;
+  margin-top: 30px;
+
+  .swiper {
+    @include mixins.swiper-margin;
+  }
+
+  &__tab {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    letter-spacing: 0.01em;
+
+    height: 40px;
+    width: max-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: var(--blue);
+    border-radius: 32px;
+    background: #f2f8ff;
+    cursor: pointer;
+
+    transition: vars.$duration background-color vars.$timing, vars.$duration color vars.$timing;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: vars.$z-index-interactive;
+    cursor: pointer;
+
+    display: block;
+    opacity: 1;
+    transition: vars.$duration opacity vars.$timing;
+
+    @starting-style {
+      opacity: 0;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    svg {
+      width: 39px;
+      height: 39px;
+      position: relative;
+      z-index: vars.$z-index-interactive;
+    }
+
+    &[data-id='prev'] {
+      left: 23px;
+
+      @media (width < vars.$media-768) {
+        display: none;
+      }
+    }
+
+    &[data-id='next'] {
+      right: 23px;
+
+      @media (width < vars.$media-768) {
+        right: var(--container-gap);
+      }
+    }
+  }
+
+  &__back {
+    position: absolute;
+    top: 0;
+    width: 86px;
+    height: 100%;
+    z-index: vars.$z-index-interactive + vars.$z-index-back;
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    left: 50%;
+
+    &--right {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+      right: 50%;
+      left: unset;
+
+      @media (width < vars.$media-768) {
+        width: 69px;
+        right: calc(var(--container-gap) * -1);
+      }
+    }
+  }
+
+  .swiper-button-disabled {
+    display: none;
+    opacity: 0;
+    transition-property: overlay display opacity;
+    transition-duration: 300ms;
+    transition-behavior: allow-discrete;
+  }
+}

@@ -1,0 +1,51 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
+.header {
+  height: 84px;
+
+  margin-top: 30px;
+  position: relative;
+  z-index: vars.$z-index-interactive;
+
+  @media (width < vars.$media-768) {
+    margin-top: 15px;
+  }
+
+  &__logo {
+    margin-bottom: 10px;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px 20px 30px;
+
+    @media (width < vars.$media-768) {
+      padding: 22px 15px;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    @media (width < vars.$media-768) {
+      gap: 31px;
+    }
+  }
+
+  &__media-button {
+    @media (width >= vars.$media-768) {
+      display: none;
+    }
+  }
+
+  &__desk-button {
+    @media (width < vars.$media-768) {
+      display: none;
+    }
+  }
+}

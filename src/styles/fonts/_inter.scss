@@ -1,0 +1,73 @@
+@use '@/styles/vars/_env.scss';
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  src: url('#{env.$BASE_TEMPLATE_PATCH}/fonts/inter/Inter-Regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  src: url('#{env.$BASE_TEMPLATE_PATCH}/fonts/inter/Inter-Black.woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  src: url('#{env.$BASE_TEMPLATE_PATCH}/fonts/inter/Inter-LightBETA.woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  src: url('#{env.$BASE_TEMPLATE_PATCH}/fonts/inter/Inter-SemiBold.woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  src: url('#{env.$BASE_TEMPLATE_PATCH}/fonts/inter/Inter-Bold.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  src: url('#{env.$BASE_TEMPLATE_PATCH}/fonts/inter/Inter-ExtraLightBETA.woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  src: url('#{env.$BASE_TEMPLATE_PATCH}/fonts/inter/Inter-ExtraBold.woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  src: url('#{env.$BASE_TEMPLATE_PATCH}/fonts/inter/Inter-ThinBETA.woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  src: url('#{env.$BASE_TEMPLATE_PATCH}/fonts/inter/Inter-Medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+}
