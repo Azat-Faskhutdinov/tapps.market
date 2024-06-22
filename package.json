@@ -60,6 +60,8 @@
     "mkdirp": "^3.0.1",
     "swiper": "8.4.5",
     "simplebar": "^6.2.5",
+    "@fancyapps/ui": "^5.0.16",
+    "star-rating.js": "^4.3.0",
     "yup": "^1.4.0"
   }
 }

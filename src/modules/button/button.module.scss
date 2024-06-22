@@ -41,5 +41,23 @@
         background-color: #2990ff;
       }
     }
+
+    &:disabled {
+      background-color: #6d727e40;
+      color: #6d727e;
+      cursor: not-allowed;
+    }
+  }
+
+  &--cancel {
+    color: #ff003d;
+    background-color: #ff003d1a;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--white);
+        background-color: #ff003d;
+      }
+    }
   }
 }

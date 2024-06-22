@@ -6,11 +6,12 @@ import { Preview } from '@/modules/preview/preview'
 import { Layout } from '@/views/_/layout'
 import { listingCards, mainListCards } from '../data/data-main-listing'
 import { Banner } from '@/modules/banner/banner'
+import { Footer } from '@/modules/footer/footer'
 
 export const Main = () => {
   return (
-    <Layout>
-      <Header />
+    <Layout title='Главная'>
+      <Header mainPage />
       <Preview />
       <Navigation />
       <Gap />
@@ -26,6 +27,7 @@ export const Main = () => {
         </>
       ))}
       <Banner />
+      <Footer />
     </Layout>
   )
 }

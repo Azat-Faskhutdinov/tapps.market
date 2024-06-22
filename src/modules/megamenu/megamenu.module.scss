@@ -1,0 +1,43 @@
+.megamenu {
+  margin-top: 15px;
+  margin-inline: var(--container-gap);
+  width: 100%;
+  height: max-content;
+
+  &__header {
+    padding: 22px 15px;
+    background-color: #fafafa;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--blue);
+
+    .logo {
+      margin-bottom: 10px;
+    }
+
+    svg {
+      width: 41px;
+      height: 40px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+  }
+
+  &__body {
+    margin-top: 15px;
+    background-color: #fafafa;
+    border-radius: 20px;
+  }
+
+  &--search {
+    .megamenu__body {
+      background-color: unset;
+    }
+  }
+}

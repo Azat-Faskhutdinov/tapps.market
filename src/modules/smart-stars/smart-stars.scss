@@ -1,0 +1,13 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+@use '@/styles/vars/_env.scss';
+
+:root {
+  --gl-star-full: url('#{env.$BASE_TEMPLATE_PATCH}/images/star-fill.svg');
+  --gl-star-empty: url('#{env.$BASE_TEMPLATE_PATCH}/images/star-empty.svg');
+  --gl-star-size: 15px;
+}
+
+[data-star-rating] .gl-star-rating--stars {
+  gap: 5px;
+}

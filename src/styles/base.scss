@@ -20,11 +20,7 @@ html {
 }
 
 [id] {
-  scroll-margin-top: 80px;
-
-  @media (width < media.$media-1280) {
-    scroll-margin-top: 60px;
-  }
+  scroll-margin-top: 40px;
 }
 
 img,

@@ -1,6 +1,8 @@
 import { rev } from '@/views/utils/rev'
 import { Preload } from '@/views/_/utils/preload'
 import { Overlay } from '@/modules/overlay/overlay'
+import { ModalMenu } from '@/modules/modal-menu/modal-menu'
+import { ModalSearch } from '@/modules/modal-search/modal-search'
 
 type props = {
   title?: string
@@ -18,6 +20,7 @@ const Layout = ({ title, children, isHeader = true }: props) => {
         <head>
           <meta charset='utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <link rel='icon' type='image/x-icon' href='favicon.svg' />
           <link rel='stylesheet' href={'./css/styles.css' + rev()} />
           <title>{title ?? ''}</title>
           <meta
@@ -28,6 +31,9 @@ const Layout = ({ title, children, isHeader = true }: props) => {
         <body>
           {children}
 
+          <Overlay />
+          <ModalMenu />
+          <ModalSearch />
           <script src={'./js/main.js' + rev()} />
         </body>
       </html>

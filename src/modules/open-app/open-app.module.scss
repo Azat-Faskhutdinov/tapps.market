@@ -1,0 +1,25 @@
+@use '@/styles/vars/vars.scss';
+
+:root {
+  --open-app-height: 69px;
+}
+
+.open-app {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 15px;
+  height: var(--open-app-height);
+  background: #fafafae5;
+  z-index: vars.$z-index-modal - vars.$z-index-interactive;
+
+  @media (width >= vars.$media-768) {
+    display: none;
+  }
+
+  .button {
+    width: 100% !important;
+    height: 49px !important;
+  }
+}

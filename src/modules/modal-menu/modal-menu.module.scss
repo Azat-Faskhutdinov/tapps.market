@@ -1,0 +1,73 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
+.modal-menu {
+  --height-value: 264px;
+
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: var(--height-value);
+  transition: vars.$duration height vars.$timing;
+
+  &__accordion {
+    position: relative;
+
+    &--opened {
+      .modal-menu__collapse {
+        opacity: 1;
+        grid-template-rows: 1fr;
+        pointer-events: unset;
+      }
+    }
+  }
+
+  &__collapse {
+    transform-origin: top right;
+    opacity: 0;
+    display: grid;
+    grid-template-rows: 0fr;
+
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: var(--white);
+
+    position: absolute;
+    top: -1px;
+    right: 0;
+    pointer-events: none;
+
+    transition: vars.$duration grid-template-rows linear, vars.$duration opacity linear;
+  }
+
+  &__body {
+    min-height: 0;
+  }
+
+  &__item {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    border-radius: 15px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+
+    transition: vars.$duration color vars.$timing, vars.$duration background-color vars.$timing,
+      vars.$duration border-color vars.$timing;
+
+    &--active {
+      border-color: #007aff;
+      background-color: var(--blue);
+      color: var(--white);
+    }
+  }
+
+  .button {
+    width: 100%;
+  }
+}

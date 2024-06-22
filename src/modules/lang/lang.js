@@ -18,6 +18,7 @@ moonBlock('.lang', ({ block }) => {
       panel.innerText = attributeValue
       disableAll()
       element.classList.add('lang__item--active')
+      block.classList.remove('lang--opened')
     })
   })
 

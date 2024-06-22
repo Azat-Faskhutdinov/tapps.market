@@ -1,0 +1,45 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.bread-crumbs {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.01em;
+
+  margin-top: 33px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  @media (width < vars.$media-768) {
+    margin-block: 30px;
+  }
+
+  &__link {
+    cursor: pointer;
+    color: #757c86;
+    transition: vars.$duration color vars.$timing;
+
+    &:hover {
+      color: var(--red);
+    }
+
+    &:not(:last-child) {
+      color: var(--blue);
+    }
+
+    &:last-child {
+      pointer-events: none;
+    }
+  }
+
+  &__sep {
+    background-color: #6d727e;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+  }
+}

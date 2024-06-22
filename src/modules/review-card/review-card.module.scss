@@ -1,0 +1,47 @@
+.review-card {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #6d727e40;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.01em;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__user-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  &__info-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+      font-weight: 600;
+      color: #252525;
+    }
+  }
+
+  &__desc {
+  }
+
+  time {
+    color: #6d727e;
+  }
+}

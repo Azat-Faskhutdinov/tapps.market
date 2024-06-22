@@ -1,0 +1,27 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
+.category-detail {
+  &__header {
+    margin-bottom: 30px;
+  }
+
+  &__gray-back {
+    background-color: #fafafa;
+    padding-block: 60px;
+
+    @media (width < vars.$media-768) {
+      padding-block: 30px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+    gap: 15px;
+
+    @media (width < vars.$media-1920) {
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    }
+  }
+}

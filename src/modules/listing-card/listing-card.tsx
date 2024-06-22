@@ -2,6 +2,7 @@ import cn from 'classnames'
 import cardPlumbImage from './assets/plumb.svg'
 import { Stars } from '../stars/stars'
 import { Icon } from '../icon/icon'
+import { CardImageWrap } from '../card-image-wrap/card-image-wrap'
 
 interface props {
   className?: string
@@ -13,15 +14,13 @@ interface props {
 export const ListingCard = (props: props) => {
   const { className, title, desc, count, isActive } = props
 
-  const mod = {
-    'listing-card__img-wrap--golden': isActive
+  const mainMod = {
+    'listing-card--search': !count
   }
 
   return (
-    <a href='javascript:void(0)' class={cn('listing-card', className)}>
-      <div class={cn('listing-card__img-wrap', mod)} data-count={count}>
-        <img src={cardPlumbImage} alt='' />
-      </div>
+    <a href='javascript:void(0)' class={cn('listing-card', mainMod, className)}>
+      <CardImageWrap src={cardPlumbImage} isGold={isActive} count={count} />
 
       <div class='listing-card__right'>
         <h3 class='listing-card__title'>{title}</h3>
@@ -32,12 +31,12 @@ export const ListingCard = (props: props) => {
 
           <div class='listing-card__links'>
             <object>
-              <a href='javascript:void(0)' class='listing-card__link'>
+              <a href='/' class='listing-card__link'>
                 <Icon name='planet' />
               </a>
             </object>
             <object>
-              <a href='javascript:void(0)' class='listing-card__link'>
+              <a href='/' class='listing-card__link'>
                 <Icon name='telegram' />
               </a>
             </object>

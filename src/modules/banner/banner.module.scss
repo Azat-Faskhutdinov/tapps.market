@@ -1,9 +1,73 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
 .banner {
   margin-bottom: 60px;
+
+  @media (width < vars.$media-768) {
+    margin-bottom: 0;
+  }
+
+  &__container {
+    @media (width < vars.$media-768) {
+      display: contents;
+    }
+  }
 
   &__body {
     border-radius: 20px;
     padding-block: 60px;
-    height: 336px;
+    height: 460px;
+    background-image: url('/assets/images/banner-image.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @media (width < vars.$media-1920) {
+      height: 336px;
+    }
+
+    @media (width < vars.$media-768) {
+      height: auto;
+      padding-bottom: 30px;
+      padding-inline: var(--container-gap);
+      background-position: 53%;
+      border-radius: unset;
+    }
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 38.73px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    @media (width < vars.$media-768) {
+      font-size: 24px;
+      line-height: 29.05px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    letter-spacing: 0.01em;
+
+    margin-bottom: 60px;
+    max-width: 795px;
+    color: #6d727e;
+
+    @media (width < vars.$media-768) {
+      margin-bottom: 30px;
+
+      font-size: 14px;
+      line-height: 16.94px;
+    }
   }
 }

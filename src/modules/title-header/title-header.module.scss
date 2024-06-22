@@ -48,4 +48,12 @@
       display: none;
     }
   }
+
+  &--media-desc {
+    p {
+      @media (width < vars.$media-768) {
+        display: block;
+      }
+    }
+  }
 }

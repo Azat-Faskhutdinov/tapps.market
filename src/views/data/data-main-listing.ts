@@ -100,7 +100,7 @@ export const mainListCards = [
   },
   {
     title: 'Shopping',
-    desc: 'Store and manage your crypto assets',
+    desc: 'Shop with ease using Toncoin. Explore a variety of real-world items and online service subscriptions, combining the convenience of digital currency with your everyday needs.',
     count: 16
   },
   {

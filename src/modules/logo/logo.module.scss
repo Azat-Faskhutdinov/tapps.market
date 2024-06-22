@@ -4,11 +4,6 @@
 .logo {
   cursor: pointer;
 
-  @media (width < vars.$media-768) {
-    width: 110px;
-    height: 19px;
-  }
-
   @media (hover: hover) {
     &:hover {
       img {
@@ -20,6 +15,12 @@
   img {
     width: 165px;
     height: 29px;
+    object-fit: contain;
     transition: vars.$duration scale vars.$timing;
+
+    @media (width < vars.$media-768) {
+      width: 110px;
+      height: 19px;
+    }
   }
 }

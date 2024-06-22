@@ -1,0 +1,54 @@
+@use '@/styles/vars/vars.scss';
+@use '@/styles/mixins/mixins.scss';
+
+.modal-search {
+  &__body {
+    margin-top: 15px;
+    background-color: #fafafa;
+    padding: 15px;
+    padding-right: 5px;
+    border-radius: 20px;
+    opacity: 0;
+
+    &--show {
+      opacity: 1;
+    }
+  }
+
+  &__scroll {
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 15px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ececec;
+      border-radius: 50px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #dbdbe0;
+      border-radius: 50px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    &--hide {
+      display: none;
+    }
+  }
+
+  [data-id='message'] {
+    display: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.36px;
+    letter-spacing: 0.01em;
+
+    text-align: center;
+  }
+}

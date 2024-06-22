@@ -4,7 +4,7 @@
 .pages-navigation {
   $self: &;
 
-  background-color: rgb(#EEF3FF, 0.25);
+  background-color: rgb(#eef3ff, 0.25);
   min-height: 100dvh;
   padding-block: 60px;
 
@@ -31,11 +31,11 @@
   }
 
   &__left {
-    //@include mixins.Regular-14;
+    font-size: 16px;
     line-height: 130%;
     grid-column: span 4;
     max-width: 710px;
-    color: #757C86;
+    color: #757c86;
 
     @media (width < vars.$media-768) {
       grid-column: span 8;
@@ -61,9 +61,9 @@
   }
 
   &__left-title {
-    //@include mixins.Bold-36;
-
     font-size: 48px;
+    font-weight: 500;
+    line-height: 110%;
     margin-bottom: 12px;
     color: var(--neutral);
   }
@@ -96,7 +96,7 @@
 
     &:hover {
       #{$self}__nav {
-        color: #E97C7A;
+        color: #e97c7a;
       }
     }
     &:active {
@@ -107,9 +107,11 @@
   }
 
   &__placeholder {
-    //@include mixins.Bold-20;
+    font-weight: 500;
+    font-size: 20px;
     grid-column: span 2;
     color: var(--black);
+    margin-bottom: 6px;
 
     @media (width < vars.$media-768) {
       grid-column: span 4;
@@ -117,7 +119,8 @@
   }
 
   &__nav {
-    //@include mixins.Regular-14;
+    font-weight: 400;
+    font-size: 14px;
     color: var(--gray);
     grid-column: span 2;
 

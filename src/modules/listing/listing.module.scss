@@ -15,16 +15,30 @@
   }
 
   &__scroll {
-    padding-bottom: 15px;
+    padding-bottom: 18px;
+    overflow-x: auto;
+
+    &.simplebar-scrollable-x {
+      padding-left: var(--container-gap);
+      padding-right: calc(var(--container-gap) + 15px);
+      margin-left: calc(-1 * var(--container-gap));
+      width: calc(100% + var(--container-gap) + var(--container-gap));
+
+      .simplebar-offset {
+        right: 15px !important;
+      }
+    }
+
+    .ui-scrollbar__track--horizontal {
+      --bar-left-h: 15px;
+      --bar-right-h: 30px;
+    }
   }
 
   &__body {
-    padding-bottom: 15px;
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 13px;
-    padding-bottom: 15px;
   }
 
   &__card {

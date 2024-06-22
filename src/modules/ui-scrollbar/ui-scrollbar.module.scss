@@ -21,8 +21,8 @@ $size-track: 6px;
     }
 
     &--horizontal {
-      left: var(--bar-left-h, 0);
-      right: var(--bar-right-h, 0);
+      left: var(--bar-left-h, 15px);
+      right: var(--bar-right-h, 15px);
       bottom: var(--bar-bottom-h, 0);
       height: $size-track;
 

@@ -4,7 +4,7 @@ interface props {
   className?: string
   tag?: string
   children?: any
-  theme: 'primary' | 'ghost'
+  theme: 'primary' | 'ghost' | 'cancel'
 }
 export const Button = (props: props) => {
   const { className, tag, children, theme, ...others } = props
@@ -13,7 +13,8 @@ export const Button = (props: props) => {
 
   const mod = {
     'button--ghost': theme === 'ghost',
-    'button--primary': theme === 'primary'
+    'button--primary': theme === 'primary',
+    'button--cancel': theme === 'cancel'
   }
 
   return (
